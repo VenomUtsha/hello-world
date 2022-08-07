@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav">
+            <div style="display: flex;align-items:center;margin-left: 150px;">
+                <img src="https://st.depositphotos.com/3246207/4385/i/450/depositphotos_43852569-stock-photo-cartoon-businessman-character.jpgzs"
+                    alt="">
+                <span class="home-nav" style="margin-left: 15px;"> Utsha</span>
+            </div>
+            <div>
+                <label><span class="home-nav"><a href="index.html">Home</a></span></label>
+                <label><span class="home-nav"><a href="reg.html">SignUp</a></span></label>
+                <label><span class="home-nav"><a href="login.html">Login</a></span></label>
+            </div>
+        </div>
+    </nav>
+
+    <form method="get" action="regAction.php">
+        <h1>Registration</h1>
+        <table>
+            <tr>
+                <td><label for="fname">First Name:</label></td>
+                <td><input type="text" name="firstname" id="ifname">
+                </td>
+
+            </tr>
+            <tr>
+                <td><label for="lname">Last Name:</label></td>
+                <td><input type="text" name="lastname" id="ilname">
+                </td>
+
+            </tr>
+            <tr>
+                <td><label for="mobile">Mobile:</label></td>
+                <td><input type="text" name="mobile" id="imobile">
+                </td>
+
+            </tr>
+
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="text" name="email" id="iemail">
+                </td>
+
+            </tr>
+
+
+
+            <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input type="password" name="password" id="ipass">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="cpassword">Confirm Password:</label></td>
+                <td><input type="password" name="cpassword" id="ipass-2">
+                </td>
+            </tr>
+
+
+            <tr>
+                <td colspan="2">
+                    <input type="submit" id="submit" value="Submit">
+                </td>
+            </tr>
+
+
+        </table>
+    </form>
+
+    <footer>
+        <div>
+            <h3><span>Leading</span> Web Institute</h3>
+            <p>a promise to lead...</p>
+        </div>
+        <small>&copy;Copyright 2021, Utsha. All rights reserved.</small>
+    </footer>
+
+    <script>
+        function formValidation() {
+            var fname = document.getElementById("ifname").value;
+            var lname = document.getElementById("ilname").value;
+            var mobile = document.getElementById("imobile").value;
+            var email = document.getElementById("iemail").value;
+            var pass = document.getElementById("ipass").value;
+            var pass2 = document.getElementById("ipass-2").value;
+
+            var mobilePattern = /(\+88)?-?01[3-9]\d{8}/;
+            var namePattern = /[a-zA-Z._]/;
+            var emailPattern = /(cse|eee|law)_\d{10}@lus.ac.bd/;
+            if (!fname.match(namePattern)) {
+                alert('Only charecter allowed');
+                return;
+            }
+            if (!lname.match(namePattern)) {
+                alert('Only charecter allowed');
+                return;
+            }
+            if (!email.match(emailPattern)) {
+                alert('Only Leading g-suit email allowed');
+                return;
+            }
+            if (!mobile.match(mobilePattern)) {
+                alert('Only BD mobile no allowed');
+                return;
+            }
+            if (pass != pass2) {
+                alert('Wrong Confirm Password');
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
